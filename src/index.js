@@ -81,7 +81,7 @@ const { GH_TOKEN, GIST_ID, USERNAME, DAYS } = process.env;
     const files = commits
       // Ignore merge commits
       .filter((c) => c.parents.length <= 1)
-      .filter((c) => c.files.filter((f) => filename.split(".")[1] != "txt"))
+      .filter((c) => c.files.filter((f) => f.filename.split(".")[1] != "txt"))
       .flatMap((c) =>
         c.files.map(
           ({
