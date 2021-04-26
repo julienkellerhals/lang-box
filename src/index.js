@@ -99,7 +99,7 @@ const { GH_TOKEN, GIST_ID, USERNAME, DAYS } = process.env;
             patch,
           })
           )
-          .filter((c) => c.path.split(".")[1] != "txt")
+        .filter((c) => !["txt","csv","json"].includes(c.path.split(".")[1]))
       );
 
     console.log(files)
