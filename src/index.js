@@ -76,7 +76,7 @@ const { GH_TOKEN, GIST_ID, USERNAME, DAYS } = process.env;
     console.log(`${commits.length} commits fetched.`);
     console.log(`\n`);
 
-    console.log(commits)
+    console.log(commits[0].files)
     // https://docs.github.com/en/rest/reference/repos#compare-two-commits
     const files = commits
       // Ignore merge commits
