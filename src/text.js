@@ -35,24 +35,22 @@ const generateBarChart = (percent, size) => {
 };
 
 export const createContent = (languages) => {
-  if (languages.name != "Text") {
-      const lines = [];
-    for (let i = 0; i < languages.length; i++) {
-      const data = languages[i];
-      const { name, percent, additions, deletions } = data;
+  const lines = [];
+  for (let i = 0; i < languages.length; i++) {
+    const data = languages[i];
+    const { name, percent, additions, deletions } = data;
 
-      lines.push(
-        [
-          trimRightStr(name, 10).padEnd(10),
-          ("+" + formatNum(additions)).padStart(7) +
-            "/" +
-            ("-" + formatNum(deletions)).padStart(7),
-          generateBarChart(percent, 21),
-        ].join(" ") +
-          percent.toFixed(1).padStart(5) +
-          "%"
-      );
-    }
+    lines.push(
+      [
+        trimRightStr(name, 10).padEnd(10),
+        ("+" + formatNum(additions)).padStart(7) +
+          "/" +
+          ("-" + formatNum(deletions)).padStart(7),
+        generateBarChart(percent, 21),
+      ].join(" ") +
+        percent.toFixed(1).padStart(5) +
+        "%"
+    );
   }
   return lines.join("\n");
 };
