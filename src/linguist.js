@@ -52,6 +52,9 @@ export const runLinguist = async (files) => {
     ...d,
     path: `${i}${path.extname(d.path)}`,
   }));
+  console.log("datas")
+  console.log(datas)
+
   const pathFileMap = datas.reduce((acc, d) => {
     acc[d.path] = d;
     return acc;
@@ -82,7 +85,7 @@ export const runLinguist = async (files) => {
   const stdout = await run("github-linguist --breakdown");
   const res = parseOutput(stdout);
 
-  console.log("Here")
+  console.log("res")
   console.log(res)
 
   const langs = Object.entries({ ...res })
