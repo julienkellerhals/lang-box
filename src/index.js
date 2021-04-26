@@ -102,6 +102,8 @@ const { GH_TOKEN, GIST_ID, USERNAME, DAYS } = process.env;
         )
       );
 
+    console.log(files)
+
     const langs = await runLinguist(files);
     console.log(`\n`);
     langs.forEach((l) =>

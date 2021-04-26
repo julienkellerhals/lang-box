@@ -52,8 +52,6 @@ export const runLinguist = async (files) => {
     ...d,
     path: `${i}${path.extname(d.path)}`,
   }));
-  console.log("datas")
-  console.log(datas)
 
   const pathFileMap = datas.reduce((acc, d) => {
     acc[d.path] = d;
